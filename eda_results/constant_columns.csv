@@ -1,0 +1,11 @@
+﻿column,unique_value,is_entirely_missing
+source_ipv6,::,False
+destination_ipv6,::,False
+login,,True
+source_asnum,12406,False
+source_astitle,"BN-AS Business Network Ltd, BY",False
+subscriber,org_ip,False
+ip_version,4,False
+post_nat_source_ipv4,0,False
+post_nat_source_port,0,False
+bridge_vchannel,12_BN_ISP,False
