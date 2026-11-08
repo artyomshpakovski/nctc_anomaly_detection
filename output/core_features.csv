@@ -1,0 +1,14 @@
+﻿feature,group
+log_flows,activity
+log_flows_per_session,activity
+log_n_hours,activity
+log_packets_per_flow,flow_structure
+log_pkt_size,flow_structure
+log_median_duration_ms,flow_structure
+log_n_rports,flow_structure
+upload_ratio,flow_structure
+share_anon,traffic_behavior
+share_p2p,traffic_behavior
+share_icmp,traffic_behavior
+retrans_rate,traffic_behavior
+median_flow_retrans_ratio,traffic_behavior

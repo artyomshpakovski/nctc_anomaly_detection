@@ -1,0 +1,122 @@
+{
+  "input_file": "data/2025-08-04_anon.csv",
+  "preprocessing": {
+    "input_rows": 877590,
+    "usable_rows": 877584,
+    "rows_removed_not_exactly_one_org_side": 6,
+    "outgoing_rows": 439035,
+    "incoming_rows": 438549,
+    "unique_remote_ips": 34667,
+    "timestamp_missing_rows": 0,
+    "duration_missing_rows": 0,
+    "port_values_counted_only_for_tcp_udp": true
+  },
+  "n_ip_profiles": 34667,
+  "min_flows": 20,
+  "n_active_profiles": 3103,
+  "core_features": [
+    "log_flows",
+    "log_flows_per_session",
+    "log_n_hours",
+    "log_packets_per_flow",
+    "log_pkt_size",
+    "log_median_duration_ms",
+    "log_n_rports",
+    "upload_ratio",
+    "share_anon",
+    "share_p2p",
+    "share_icmp",
+    "retrans_rate",
+    "median_flow_retrans_ratio"
+  ],
+  "feature_groups": {
+    "activity": [
+      "log_flows",
+      "log_flows_per_session",
+      "log_n_hours"
+    ],
+    "flow_structure": [
+      "log_packets_per_flow",
+      "log_pkt_size",
+      "log_median_duration_ms",
+      "log_n_rports",
+      "upload_ratio"
+    ],
+    "traffic_behavior": [
+      "share_anon",
+      "share_p2p",
+      "share_icmp",
+      "retrans_rate",
+      "median_flow_retrans_ratio"
+    ]
+  },
+  "group_variance_sums_before_balance": {
+    "activity": 4.814309042129959,
+    "flow_structure": 2.8373171035915243,
+    "traffic_behavior": 0.29675119745749956
+  },
+  "group_balance_weights": {
+    "activity": 0.7418423599940724,
+    "flow_structure": 0.9663282431860102,
+    "traffic_behavior": 2.988012231564888
+  },
+  "models": {
+    "n_active_profiles": 3103,
+    "iforest": {
+      "n_estimators": 300,
+      "max_samples": 256,
+      "contamination": "auto",
+      "random_state": 42
+    },
+    "lof": {
+      "n_neighbors": 35,
+      "score": "-negative_outlier_factor_"
+    },
+    "dbscan": {
+      "eps": 1.373,
+      "eps_source": "экспериментальная базовая конфигурация",
+      "min_samples": 20
+    },
+    "dbscan_noise_count": 495,
+    "dbscan_noise_share": 0.15952304221720914,
+    "consensus_top5_count": 28
+  },
+  "agreement": [
+    {
+      "top_percent": 1,
+      "n_if": 32,
+      "n_lof": 32,
+      "n_dbscan_noise": 495,
+      "if_lof_intersection": 3,
+      "if_lof_jaccard": 0.04918032786885246,
+      "if_dbscan_intersection": 32,
+      "lof_dbscan_intersection": 17,
+      "all_three_intersection": 3
+    },
+    {
+      "top_percent": 2,
+      "n_if": 63,
+      "n_lof": 63,
+      "n_dbscan_noise": 495,
+      "if_lof_intersection": 8,
+      "if_lof_jaccard": 0.06779661016949153,
+      "if_dbscan_intersection": 58,
+      "lof_dbscan_intersection": 25,
+      "all_three_intersection": 8
+    },
+    {
+      "top_percent": 5,
+      "n_if": 156,
+      "n_lof": 156,
+      "n_dbscan_noise": 495,
+      "if_lof_intersection": 28,
+      "if_lof_jaccard": 0.09859154929577464,
+      "if_dbscan_intersection": 132,
+      "lof_dbscan_intersection": 73,
+      "all_three_intersection": 28
+    }
+  ],
+  "candidate_count": 284,
+  "consensus_count": 28,
+  "interpretation": "Кандидаты являются статистически нетипичными профилями и требуют проверки; без размеченных данных их нельзя считать подтверждёнными атаками."
+}
