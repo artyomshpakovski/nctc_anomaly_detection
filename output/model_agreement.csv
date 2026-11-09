@@ -1,4 +1,0 @@
-﻿top_percent,n_if,n_lof,n_dbscan_noise,if_lof_intersection,if_lof_jaccard,if_dbscan_intersection,lof_dbscan_intersection,all_three_intersection
-1,32,32,495,3,0.04918032786885246,32,17,3
-2,63,63,495,8,0.06779661016949153,58,25,8
-5,156,156,495,28,0.09859154929577464,132,73,28
